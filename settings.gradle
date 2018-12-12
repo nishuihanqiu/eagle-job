@@ -1,0 +1,7 @@
+rootProject.name = 'eagle-job'
+include 'eagle-core'
+include 'eagle-registry-zookeeper'
+include 'eagle-registry-consul'
+include 'eagle-transport-netty'
+include 'eagle-manager'
+

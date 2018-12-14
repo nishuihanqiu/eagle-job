@@ -1,14 +1,29 @@
-plugins {
-    id 'java'
+buildscript {
+    ext {
+        sourceVersion = 1.8
+    }
+
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    }
 }
 
-group 'tech.lls.dev'
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group 'com.lls.dev'
 version '1.0.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 repositories {
-    mavenCentral()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    jcenter()
 }
 
 dependencies {

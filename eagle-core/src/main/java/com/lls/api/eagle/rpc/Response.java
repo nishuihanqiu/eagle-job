@@ -29,4 +29,6 @@ public interface Response {
 
     void setProcessTime(long time);
 
+    int getTimeout();
+
 }

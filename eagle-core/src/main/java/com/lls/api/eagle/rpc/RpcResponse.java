@@ -16,6 +16,24 @@ public class RpcResponse implements Response {
     private String version;
     private Map<String, String> attachments;
     private long processTime;
+    private int timeout;
+
+    public RpcResponse() {
+    }
+
+    public RpcResponse(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public RpcResponse(Response response) {
+        this.result = response.getResult();
+        this.exception = response.getException();
+        this.requestId = response.getRequestId();
+        this.processTime = response.getProcessTime();
+        this.timeout = response.getTimeout();
+        this.version = response.getVersion();
+        this.attachments = response.getAttachments();
+    }
 
     @Override
     public String getRequestId() {
@@ -84,5 +102,10 @@ public class RpcResponse implements Response {
     @Override
     public void setProcessTime(long time) {
         this.processTime = time;
+    }
+
+    @Override
+    public int getTimeout() {
+        return timeout;
     }
 }

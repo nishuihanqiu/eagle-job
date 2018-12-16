@@ -30,7 +30,7 @@ public class RpcResponseFuture implements ResponseFuture {
     private Exception exception;
     private Object result;
     private long createdTime = System.currentTimeMillis();
-    private int timeout = 0;
+    private int timeout;
     private long processTime = 0;
 
     private Request request;
@@ -241,7 +241,7 @@ public class RpcResponseFuture implements ResponseFuture {
         return result;
     }
 
-    protected boolean done() {
+    private boolean done() {
         synchronized (lock) {
             if (!this.isDoing()) {
                 return false;

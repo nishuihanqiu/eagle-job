@@ -1,4 +1,6 @@
-package com.lls.api.eagle.rpc;
+package com.lls.api.eagle.transport;
+
+import com.lls.api.eagle.rpc.Request;
 
 /************************************
  * Client

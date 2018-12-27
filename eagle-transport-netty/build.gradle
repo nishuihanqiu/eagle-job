@@ -24,5 +24,7 @@ repositories {
 }
 
 dependencies {
+    compile project(":eagle-core")
+    compile 'io.netty:netty-all:4.1.16.Final'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

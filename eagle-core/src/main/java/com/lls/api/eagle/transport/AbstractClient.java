@@ -1,7 +1,9 @@
-package com.lls.api.eagle.rpc;
+package com.lls.api.eagle.transport;
 
+import com.lls.api.eagle.config.ClientConfig;
 import com.lls.api.eagle.enums.ChannelState;
 import com.lls.api.eagle.exception.EagleException;
+import com.lls.api.eagle.rpc.Request;
 
 import java.net.InetSocketAddress;
 
@@ -14,11 +16,11 @@ public abstract class AbstractClient implements Client {
 
     private InetSocketAddress localAddress;
     private InetSocketAddress remoteAddress;
-    private String url;
+    protected ClientConfig clientConfig;
     protected ChannelState state = ChannelState.UN_INIT;
 
-    public AbstractClient(String url) {
-        this.url = url;
+    public AbstractClient(ClientConfig clientConfig) {
+        this.clientConfig = clientConfig;
     }
 
     @Override
@@ -45,7 +47,7 @@ public abstract class AbstractClient implements Client {
     }
 
     @Override
-    public String getUrl() {
-        return url;
+    public ClientConfig getClientConfig() {
+        return clientConfig;
     }
 }

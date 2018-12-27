@@ -1,6 +1,9 @@
-package com.lls.api.eagle.rpc;
+package com.lls.api.eagle.transport;
 
+import com.lls.api.eagle.config.ClientConfig;
 import com.lls.api.eagle.exception.TransportException;
+import com.lls.api.eagle.rpc.Request;
+import com.lls.api.eagle.rpc.Response;
 
 import java.net.InetSocketAddress;
 
@@ -28,6 +31,6 @@ public interface Channel {
 
     boolean isAvailable();
 
-    String getUrl();
+    ClientConfig getClientConfig();
 
 }
